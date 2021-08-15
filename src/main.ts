@@ -4,8 +4,7 @@ import init from './holidays/holidays.resource';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
   init();
-  await app.listen(8080);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
